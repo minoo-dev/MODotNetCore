@@ -90,5 +90,21 @@ namespace MODotNetCore.ConsoleApp
             string message = result > 0 ? "Update Successful." : "Update Failed.";
             Console.WriteLine(message);
         }
+
+        public void Delete(int id)
+        {
+            SqlConnection sqlConnection = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
+            sqlConnection.Open();
+
+            string query = @"DELETE FROM [dbo].[Tbl_Blog]
+            WHERE BlogId = @BlogId";
+            SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+            sqlCommand.Parameters.AddWithValue("@BlogId", id);
+            int result = sqlCommand.ExecuteNonQuery();
+            sqlConnection.Close();
+
+            string message = result > 0 ? "Delete Successful." : "Delete Failed.";
+            Console.WriteLine(message);
+        }
     }
 }
