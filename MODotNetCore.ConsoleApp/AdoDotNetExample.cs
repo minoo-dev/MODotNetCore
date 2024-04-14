@@ -10,14 +10,18 @@ namespace MODotNetCore.ConsoleApp
 {
     internal class AdoDotNetExample
     {
+        private readonly SqlConnectionStringBuilder _sqlConnectionStringBuilder = new SqlConnectionStringBuilder()
+        {
+            DataSource = "DESKTOP-XPC",
+            InitialCatalog = "DotNetTrainingBatch4",
+            UserID = "sa",
+            Password = "sasa@123"
+            
+        };
+
         public void Read()
         {
-            SqlConnectionStringBuilder stringBuilder = new SqlConnectionStringBuilder();
-            stringBuilder.DataSource = "DESKTOP-XPC"; // Server Name
-            stringBuilder.InitialCatalog = "DotNetTrainingBatch4";
-            stringBuilder.UserID = "sa";
-            stringBuilder.Password = "sasa@123";
-            SqlConnection connection = new SqlConnection(stringBuilder.ConnectionString);
+            SqlConnection connection = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
             connection.Open();
             Console.WriteLine("Connection open...");
 
@@ -39,6 +43,30 @@ namespace MODotNetCore.ConsoleApp
                 Console.WriteLine("Blog Content => " + row["BlogContent"]);
                 Console.WriteLine("------------------------------------");
             }
+        }
+
+        public void Create(string title, string authour, string content)
+        {
+            SqlConnection sqlConnection = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
+            sqlConnection.Open();
+
+            string query = @"INSERT INTO [dbo].[Tbl_Blog]
+            ([BlogTitle]
+           ,[BlogAuthor]
+           ,[BlogContent])
+            VALUES
+           (@BlogTitle
+           ,@BlogAuthor
+           ,@BlogContent)";
+            SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+            sqlCommand.Parameters.AddWithValue("@BlogTitle", title);
+            sqlCommand.Parameters.AddWithValue("@BlogAuthor", authour);
+            sqlCommand.Parameters.AddWithValue("@BlogContent", content);
+            int result = sqlCommand.ExecuteNonQuery();
+            sqlConnection.Close();
+
+            string message = result > 0 ? "Saving Successful." : "Saving Failded.";
+            Console.WriteLine(message);
         }
     }
 }
