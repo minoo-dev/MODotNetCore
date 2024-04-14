@@ -65,7 +65,29 @@ namespace MODotNetCore.ConsoleApp
             int result = sqlCommand.ExecuteNonQuery();
             sqlConnection.Close();
 
-            string message = result > 0 ? "Saving Successful." : "Saving Failded.";
+            string message = result > 0 ? "Saving Successful." : "Saving Failed.";
+            Console.WriteLine(message);
+        }
+
+        public void Update (int id, string title, string authour, string content)
+        {
+            SqlConnection sqlConnection = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
+            sqlConnection.Open();
+
+            string query = @"UPDATE [dbo].[Tbl_Blog]
+            SET [BlogTitle] = @BlogTitle
+            ,[BlogAuthor] = @BlogAuthor
+            ,[BlogContent] = @BlogContent
+            WHERE BlogId = @BlogId";
+            SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+            sqlCommand.Parameters.AddWithValue("@BlogId", id);
+            sqlCommand.Parameters.AddWithValue("@BlogTitle", title);
+            sqlCommand.Parameters.AddWithValue("@BlogAuthor", authour);
+            sqlCommand.Parameters.AddWithValue("@BlogContent", content);
+            int result = sqlCommand.ExecuteNonQuery();
+            sqlConnection.Close();
+
+            string message = result > 0 ? "Update Successful." : "Update Failed.";
             Console.WriteLine(message);
         }
     }

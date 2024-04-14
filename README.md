@@ -17,3 +17,16 @@
 9. Right click "ConsoleApp" project name > Manage NuGet Packages
 	- search "sqlclient"
 	- select "System.Data.SqlClient" > Install
+10. Create New Database => "DotNetTrainingBatch4"
+11- Create New Table => "Tbl_Blog"
+		BlogId (int) Primary Identity 1,1
+		BlogTitle (varchar(50)),
+		BlogAuthor (varchar(50)),
+		BlogContent (varchar(50))
+12. Create AdoDotNetExample.cs 
+	=> Read() { #implement }
+	=> Create () { #implement }
+	=> Update () { #implement }
+	=> Delete () { #implement }
+	=> Edit	()	{ #implement }
+
