@@ -4,7 +4,7 @@
 - MODotNetCore
 	- MODotNetCore.ConsoleApp
 		- BlogDto
-		- AdoDotNetExample
+		- AdoDotNetExamples
 		- DapperExamples
 	- MODotNetCore.RestApi
 
