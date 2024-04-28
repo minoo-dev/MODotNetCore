@@ -1,3 +1,14 @@
+# DotNet Training Batch 4 Project
+
+## Project Structure
+- MODotNetCore
+	- MODotNetCore.ConsoleApp
+		- BlogDto
+		- AdoDotNetExample
+		- DapperExamples
+	- MODotNetCore.RestApi
+
+## Notable Steps
 1. Create New Project > Template > Console App ****Please Note** > *Not Console App (.Net Framework )*
 2. Fill Project Information  
 *[Name Convention : NameInitialLetter+DotNetCore e.g Min Oo > MODotNetCore]*  
@@ -27,11 +38,7 @@
 	- BlogAuthor (varchar(50)),
 	- BlogContent (varchar(50))
 12. Create `AdoDotNetExample.cs` 
-	- => `Read() { #implement }`
-	- => `Create () { #implement }`
-	- => `Update () { #implement }`
-	- => `Delete () { #implement }`
-	- => `Edit	()	{ #implement }`
+	- => Implement `Read(), Create(), Edit(), Update(), Delete()`
 13. ORM => Dapper  
 	- Right click "ConsoleApp" project name > Manage NuGet Packages
 	- search "dapper"
@@ -39,8 +46,4 @@
 14. Add `BlogDto.cs`
 12. Add `ConnectionStrings.cs` 
 12. Ad `DapperNetExample.cs` 
-	- => `Read() { #implement }`
-	- => `Edit	()	{ #implement }`
-	- => `Create () { #implement }`
-	- => `Update () { #implement }`
-	- => `Delete () { #implement }`
+	- => Implement `Read(), Create(), Edit(), Update(), Delete()`
