@@ -51,5 +51,19 @@
 	- select "Dapper" > Install
 14. Add `BlogDto.cs`
 12. Add `ConnectionStrings.cs` 
-12. Ad `DapperNetExample.cs` 
+12. Add `DapperExample.cs` 
+	- => Implement `Read(), Create(), Edit(), Update(), Delete()`
+12.	ORM => EFCore
+	- Right click "ConsoleApp" Project Name > Manage NuGet Packages
+	- search "entityframework"
+	- select "Microsoft.EntityFrameworkCore" > change version "7.xx" > Install
+12. EF Core DB Provider
+	- Right click "ConsoleApp" Project Name > Manage NuGet Packages
+	- search "entityframework"	
+	- select "Microsoft.EntityFrameworkCore.SqlServer" > change version "7.xx" > Install
+13. Add `AppDbContext.cs` 
+	> `DbSet<BlogDto> Blogs`
+	> override `onConfiguring`
+13. Update `BlogDto.cs` > `[Table("Tbl_Blog")]`
+12. Add `EFCoreExample.cs` 
 	- => Implement `Read(), Create(), Edit(), Update(), Delete()`

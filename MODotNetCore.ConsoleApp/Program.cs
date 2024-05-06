@@ -13,7 +13,10 @@ AdoDotNetExample adoDotNetExample = new AdoDotNetExample();
 //adoDotNetExample.Edit(12);
 //adoDotNetExample.Edit(11);
 
-DapperExample dapperExample = new DapperExample();
-dapperExample.Run();
+//DapperExample dapperExample = new DapperExample();
+//dapperExample.Run();
+
+EFcoreExample EFcoreExample = new EFcoreExample();
+EFcoreExample.Run();
 
 Console.ReadKey();
