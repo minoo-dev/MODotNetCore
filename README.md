@@ -68,3 +68,8 @@
 12. Add `EFCoreExample.cs` 
 	- => Implement `Read(), Create(), Edit(), Update(), Delete()`
 12. Console App Folder Restructure
+12. RestApi
+	- Add Web Core Api Project `MODotNetTrainingBatch4.RestApi`
+	- Remove Any files related to `Weather`
+	- Right Click > Add New API Controller `BlogController`
+	- Implement methods for `[HttpGet], [HttpPost], [HttpPut], [HttpPatch], [HttpDelete]`
