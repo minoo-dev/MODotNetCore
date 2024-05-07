@@ -1,4 +1,6 @@
 ﻿using Dapper;
+using MODotNetCore.ConsoleApp.Dtos;
+using MODotNetCore.ConsoleApp.Services;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -8,11 +10,11 @@ using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MODotNetCore.ConsoleApp
+namespace MODotNetCore.ConsoleApp.DapperExamples
 {
     internal class DapperExample
     {
-        public void Run() 
+        public void Run()
         {
             Read();
             //Edit(1);
@@ -40,7 +42,7 @@ namespace MODotNetCore.ConsoleApp
         private void Edit(int id)
         {
             using IDbConnection db = new SqlConnection(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
-            var item = db.Query<BlogDto>("select * from tbl_blog where BlogId = @BlogId",new BlogDto { BlogId = id}).FirstOrDefault();
+            var item = db.Query<BlogDto>("select * from tbl_blog where BlogId = @BlogId", new BlogDto { BlogId = id }).FirstOrDefault();
 
             if (item is null)
             {
@@ -74,7 +76,7 @@ namespace MODotNetCore.ConsoleApp
            ,@BlogContent)";
 
             using IDbConnection db = new SqlConnection(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
-            int result = db.Execute(query,item);
+            int result = db.Execute(query, item);
 
             string message = result > 0 ? "Saving Successful." : "Saving Failed.";
             Console.WriteLine(message);
@@ -120,4 +122,4 @@ namespace MODotNetCore.ConsoleApp
             Console.WriteLine(message);
         }
     }
-}   
+}

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MODotNetCore.ConsoleApp
+namespace MODotNetCore.ConsoleApp.AdoDotNetExamples
 {
     internal class AdoDotNetExample
     {
@@ -16,7 +16,7 @@ namespace MODotNetCore.ConsoleApp
             InitialCatalog = "DotNetTrainingBatch4",
             UserID = "sa",
             Password = "sasa@123"
-            
+
         };
 
         public void Read()
@@ -62,12 +62,12 @@ namespace MODotNetCore.ConsoleApp
             connection.Close();
             Console.WriteLine("Connection close...");
 
-            if (dataTable.Rows.Count == 0 )
+            if (dataTable.Rows.Count == 0)
             {
                 Console.WriteLine("No data found.");
                 return;
             }
-            
+
             DataRow row = dataTable.Rows[0];
             Console.WriteLine("Blog Id => " + row["BlogId"]);
             Console.WriteLine("Blog Title => " + row["BlogTitle"]);
@@ -100,7 +100,7 @@ namespace MODotNetCore.ConsoleApp
             Console.WriteLine(message);
         }
 
-        public void Update (int id, string title, string authour, string content)
+        public void Update(int id, string title, string authour, string content)
         {
             SqlConnection sqlConnection = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
             sqlConnection.Open();

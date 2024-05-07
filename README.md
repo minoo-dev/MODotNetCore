@@ -62,8 +62,9 @@
 	- search "entityframework"	
 	- select "Microsoft.EntityFrameworkCore.SqlServer" > change version "7.xx" > Install
 13. Add `AppDbContext.cs` 
-	> `DbSet<BlogDto> Blogs`
-	> override `onConfiguring`
-13. Update `BlogDto.cs` > `[Table("Tbl_Blog")]`
+	- `DbSet<BlogDto> Blogs`
+	- override `onConfiguring`
+13. Update `BlogDto.cs` > `[Table("Tbl_Blog")]` `[key]`
 12. Add `EFCoreExample.cs` 
 	- => Implement `Read(), Create(), Edit(), Update(), Delete()`
+12. Console App Folder Restructure

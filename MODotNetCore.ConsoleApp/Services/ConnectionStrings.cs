@@ -1,6 +1,6 @@
 ﻿using System.Data.SqlClient;
 
-namespace MODotNetCore.ConsoleApp;
+namespace MODotNetCore.ConsoleApp.Services;
 
 internal static class ConnectionStrings
 {
