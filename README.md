@@ -73,3 +73,8 @@
 	- Remove Any files related to `Weather`
 	- Right Click > Add New API Controller `BlogController`
 	- Implement methods for `[HttpGet], [HttpPost], [HttpPut], [HttpPatch], [HttpDelete]`
+12. Set up EFCore
+	- Add Packages `EntityFrameworkCore` & `EntityFrameworkCore.SqlServer`
+	- Add DBContext `AppDbContext.cs` (Copy From ConsoleApp)
+	- Add Model `BlogModel.cs` (Copy `BlogDto.cs` Then Rename)
+	- Add `ConnectionStrings.cs`
