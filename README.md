@@ -72,7 +72,7 @@
 	- => Implement `Read(), Create(), Edit(), Update(), Delete()`
 22. Console App Folder Restructure
 23. Web API (RestApi)
-	- Add Web Core Api Project `MODotNetTrainingBatch4.RestApi`
+	- Add Web Core Api Project `MODotNetCore.RestApi`
 	- Remove Any files related to `Weather`
 	- Right Click `Controller` > Add New API Controller `BlogController`
 	- Implement skeleton methods for `[HttpGet], [HttpPost], [HttpPut], [HttpPatch], [HttpDelete]`
