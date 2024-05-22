@@ -14,6 +14,7 @@
 2024-04-22 => Dapper CRUD  
 2024-04-23 => EFCore CRUD
 2024-04-23 => ASP.Net Core Web API + EFCore CRUD
+2024-04-29 => ASP.Net Core Web API + Dapper CRUD
 
 ## Notable Steps
 1. Create New Project > Template > Console App ****Please Note** > *Not Console App (.Net Framework )*
@@ -69,10 +70,10 @@
 12. Add `EFCoreExample.cs` 
 	- => Implement `Read(), Create(), Edit(), Update(), Delete()`
 12. Console App Folder Restructure
-12. RestApi
+12. Web API (RestApi)
 	- Add Web Core Api Project `MODotNetTrainingBatch4.RestApi`
 	- Remove Any files related to `Weather`
-	- Right Click > Add New API Controller `BlogController`
+	- Right Click `Controller` > Add New API Controller `BlogController`
 	- Implement skeleton methods for `[HttpGet], [HttpPost], [HttpPut], [HttpPatch], [HttpDelete]`
 12. Set up EFCore
 	- Add Packages `EntityFrameworkCore` & `EntityFrameworkCore.SqlServer`
@@ -81,4 +82,8 @@
 	- Add `ConnectionStrings.cs`
 12. Detail Implement BlogController 
 	- Optional Model Data : Add ? after data type in Blog Model e.g `public string? BlogTitle`
+13. Web API (RestApi) + Dapper
+	- Install `Dapper`
+	- Add New API Controller `Controller` > `BlogDapperController`
+	- Implement methods for `[HttpGet], [HttpPost], [HttpPut], [HttpPatch], [HttpDelete]`
 	
