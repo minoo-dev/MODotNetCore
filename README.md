@@ -12,9 +12,9 @@
 2024-04-09 => Console App  
 2024-04-10 => ADO.Net CRUD  
 2024-04-22 => Dapper CRUD  
-2024-04-23 => EFCore CRUD
-2024-04-23 => ASP.Net Core Web API + EFCore CRUD
-2024-04-29 => ASP.Net Core Web API + Dapper CRUD
+2024-04-23 => EFCore CRUD  
+2024-04-23 => ASP.Net Core Web API + EFCore CRUD  
+2024-04-29 => ASP.Net Core Web API + Dapper CRUD  
 
 ## Notable Steps
 1. Create New Project > Template > Console App ****Please Note** > *Not Console App (.Net Framework )*
