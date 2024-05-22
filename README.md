@@ -15,6 +15,7 @@
 2024-04-23 => EFCore CRUD  
 2024-04-23 => ASP.Net Core Web API + EFCore CRUD  
 2024-04-29 => ASP.Net Core Web API + Dapper CRUD  
+2024-05-01 => ASP.Net Core Web API + Ado.Net CRUD  
 
 ## Notable Steps
 1. Create New Project > Template > Console App ****Please Note** > *Not Console App (.Net Framework )*
@@ -52,38 +53,43 @@
 	- search "dapper"
 	- select "Dapper" > Install
 14. Add `BlogDto.cs`
-12. Add `ConnectionStrings.cs` 
-12. Add `DapperExample.cs` 
+15. Add `ConnectionStrings.cs` 
+16. Add `DapperExample.cs` 
 	- => Implement `Read(), Create(), Edit(), Update(), Delete()`
-12.	ORM => EFCore
+17.	ORM => EFCore
 	- Right click "ConsoleApp" Project Name > Manage NuGet Packages
 	- search "entityframework"
 	- select "Microsoft.EntityFrameworkCore" > change version "7.xx" > Install
-12. EF Core DB Provider
+18. EF Core DB Provider
 	- Right click "ConsoleApp" Project Name > Manage NuGet Packages
 	- search "entityframework"	
 	- select "Microsoft.EntityFrameworkCore.SqlServer" > change version "7.xx" > Install
-13. Add `AppDbContext.cs` 
+19. Add `AppDbContext.cs` 
 	- `DbSet<BlogDto> Blogs`
 	- override `onConfiguring`
-13. Update `BlogDto.cs` > `[Table("Tbl_Blog")]` `[key]`
-12. Add `EFCoreExample.cs` 
+20. Update `BlogDto.cs` > `[Table("Tbl_Blog")]` `[key]`
+21. Add `EFCoreExample.cs` 
 	- => Implement `Read(), Create(), Edit(), Update(), Delete()`
-12. Console App Folder Restructure
-12. Web API (RestApi)
+22. Console App Folder Restructure
+23. Web API (RestApi)
 	- Add Web Core Api Project `MODotNetTrainingBatch4.RestApi`
 	- Remove Any files related to `Weather`
 	- Right Click `Controller` > Add New API Controller `BlogController`
 	- Implement skeleton methods for `[HttpGet], [HttpPost], [HttpPut], [HttpPatch], [HttpDelete]`
-12. Set up EFCore
+24. Set up EFCore
 	- Add Packages `EntityFrameworkCore` & `EntityFrameworkCore.SqlServer`
 	- Add DBContext `AppDbContext.cs` (Copy From ConsoleApp)
 	- Add Model `BlogModel.cs` (Copy `BlogDto.cs` Then Rename)
 	- Add `ConnectionStrings.cs`
-12. Detail Implement BlogController 
+25. Detail Implement BlogController 
 	- Optional Model Data : Add ? after data type in Blog Model e.g `public string? BlogTitle`
-13. Web API (RestApi) + Dapper
+26. Web API (RestApi) + Dapper
 	- Install `Dapper`
 	- Add New API Controller `Controller` > `BlogDapperController`
 	- Implement methods for `[HttpGet], [HttpPost], [HttpPut], [HttpPatch], [HttpDelete]`
+27. Web API (RestApi) + Ado.Net
+	- Add New API Controller `Controller` > `BlogAdoDotNetController`
+	- Use `System.Data.SqlClient`
+	- Implement methods for `[HttpGet], [HttpPost]`
+	- **Homework** : Implement methods for `[HttpPut], [HttpPatch], [HttpDelete]`
 	
