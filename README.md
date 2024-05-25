@@ -16,6 +16,7 @@
 2024-04-23 => ASP.Net Core Web API + EFCore CRUD  
 2024-04-29 => ASP.Net Core Web API + Dapper CRUD  
 2024-05-01 => ASP.Net Core Web API + Ado.Net CRUD  
+2024-05-01 => Dapper Custom Service  
 
 ## Notable Steps
 1. Create New Project > Template > Console App ****Please Note** > *Not Console App (.Net Framework )*
@@ -92,4 +93,8 @@
 	- Use `System.Data.SqlClient`
 	- Implement methods for `[HttpGet], [HttpPost]`
 	- **Homework** : Implement methods for `[HttpPut], [HttpPatch], [HttpDelete]`
-	
+28. Add Custom Service shared Project `MODotNetCore.Shared`
+	- Reference it in `MODotNetCore.RestApi`
+29. Dapper Custom Service
+	- Implement `DapperService.cs` in `MODotNetCore.shared`
+	- Implement `BlogDapperServiceController` in `MODotNetCore.RestApi`
