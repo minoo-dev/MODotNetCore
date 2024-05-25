@@ -17,6 +17,7 @@
 			- BlogDapperServiceController
 	- MODotNetCore.shared
 		- DapperService
+		- AdoDotNetService
 
 ## Timeline
 2024-04-09 => Console App  
@@ -27,6 +28,7 @@
 2024-04-29 => ASP.Net Core Web API + Dapper CRUD  
 2024-05-01 => ASP.Net Core Web API + Ado.Net CRUD  
 2024-05-01 => Dapper Custom Service  
+2024-05-01 => ADO.Net Custom Service  
 
 ## Notable Steps
 1. Create New Project > Template > Console App ****Please Note** > *Not Console App (.Net Framework )*
@@ -108,3 +110,8 @@
 29. Dapper Custom Service
 	- Implement `DapperService.cs` in `MODotNetCore.shared`
 	- Implement `BlogDapperServiceController` in `MODotNetCore.RestApi`
+30. Install `Newtonsoft.Json` package in `MODotNetCore.Shared`
+	- To Convert **Data Table** > **Json** > **List**
+30. ADO.Net Custom Service
+	- Implement `AdoDotNetService.cs` in `MODotNetCore.shared`
+	- Implement `BlogAdoDotNetServiceController` in `MODotNetCore.RestApi`
