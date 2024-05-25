@@ -6,7 +6,17 @@
 		- BlogDto
 		- AdoDotNetExamples
 		- DapperExamples
+		- EFCoreExamples
 	- MODotNetCore.RestApi
+		- Models
+			- BlogModel
+		- Controller
+			- BlogController `EFCore`
+			- BlogAdoDotNetController
+			- BlogDapperController
+			- BlogDapperServiceController
+	- MODotNetCore.shared
+		- DapperService
 
 ## Timeline
 2024-04-09 => Console App  
