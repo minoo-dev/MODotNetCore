@@ -19,14 +19,14 @@ namespace MODotNetCore.RestApi.Controllers
         }
 
         [HttpGet]
-        public IActionResult Read()
+        public IActionResult GetBlogs()
         {
             var lst = _context.Blogs.ToList();
             return Ok(lst);
         }
 
         [HttpGet("{id}")]
-        public IActionResult Edit(int id)
+        public IActionResult GetBlog(int id)
         {
             var item = _context.Blogs.FirstOrDefault(x => x.BlogId == id);
             if (item is null)
@@ -37,7 +37,7 @@ namespace MODotNetCore.RestApi.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(BlogModel blog)
+        public IActionResult CreateBlog(BlogModel blog)
         {
             _context.Blogs.Add(blog);
             var result = _context.SaveChanges();
@@ -47,7 +47,7 @@ namespace MODotNetCore.RestApi.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult Update(int id, BlogModel blog)
+        public IActionResult UpdateBlog(int id, BlogModel blog)
         {
             var item = _context.Blogs.FirstOrDefault(x => x.BlogId == id);
             if (item is null)
@@ -63,7 +63,7 @@ namespace MODotNetCore.RestApi.Controllers
             return Ok(message);
         }
         [HttpPatch("{id}")]
-        public IActionResult Patch(int id, BlogModel blog)
+        public IActionResult PatchBlog(int id, BlogModel blog)
         {
             var item = _context.Blogs.FirstOrDefault(x => x.BlogId == id);
             if (item is null)
@@ -88,7 +88,7 @@ namespace MODotNetCore.RestApi.Controllers
             return Ok(message);
         }
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public IActionResult DeleteBlog(int id)
         {
             var item = _context.Blogs.FirstOrDefault(x => x.BlogId == id);
             if (item is null)
