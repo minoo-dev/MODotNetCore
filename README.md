@@ -41,8 +41,8 @@
 2024-05-07 => N-Layer Architecture (ASP.Net Core Web API + EFCore)  
 
 ## Questions/Reminders
-[x] Q : How to handle possible Null return value? (ADO.Net/Dapper Custom Service) `ref 2024-05-01 Video`
-[x] R : BlogResponseModel Return Type in Data Access Layer (Remind Ko Lynn) `ref 2024-05-07 N-Layer Video 14:00 mins`
+- [ ] Q : How to handle possible Null return value? (ADO.Net/Dapper Custom Service) `ref 2024-05-01 Video`
+- [ ] R : BlogResponseModel Return Type in Data Access Layer (Remind Ko Lynn) `ref 2024-05-07 N-Layer Video 14:00 mins`
 	
 ## Notable Steps
 1. Create New Project > Template > Console App ****Please Note** > *Not Console App (.Net Framework )*
