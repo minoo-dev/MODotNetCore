@@ -13,8 +13,17 @@
 		- Controller
 			- BlogController `EFCore`
 			- BlogAdoDotNetController
+			- BlogAdoDotNetServiceController
 			- BlogDapperController
 			- BlogDapperServiceController
+	- MODotNetCore.RestApiWithNLayer
+		- Models
+			- BlogModel
+		- Features
+			- Blog
+				- BL_Blog
+				- DA_Blog
+				- BlogController `EFCore`
 	- MODotNetCore.shared
 		- DapperService
 		- AdoDotNetService
@@ -29,7 +38,12 @@
 2024-05-01 => ASP.Net Core Web API + Ado.Net CRUD  
 2024-05-01 => Dapper Custom Service  
 2024-05-01 => ADO.Net Custom Service  
+2024-05-07 => N-Layer Architecture (ASP.Net Core Web API + EFCore)  
 
+## Questions/Reminders
+	[x] Q : How to handle possible Null return value? (ADO.Net/Dapper Custom Service) `ref 2024-05-01 Video`
+	[x] R : BlogResponseModel Return Type in Data Access Layer (Remind Ko Lynn) `ref 2024-05-07 N-Layer Video 14:00 mins`
+	
 ## Notable Steps
 1. Create New Project > Template > Console App ****Please Note** > *Not Console App (.Net Framework )*
 2. Fill Project Information  
@@ -115,3 +129,10 @@
 30. ADO.Net Custom Service
 	- Implement `AdoDotNetService.cs` in `MODotNetCore.shared`
 	- Implement `BlogAdoDotNetServiceController` in `MODotNetCore.RestApi`
+31. Add RestApi with N-Layer Project `MODotNetCore.RestApiWithNLayer` (User Interface, Business Logic, Data Access)
+	- Add DBContext `Db/AppDbContext.cs` (Copy From MODotNetCore.RestApi)
+	- Add Model `Models/BlogModel.cs` (Copy From MODotNetCore.RestApi)
+	- Implement `Features/Blog/BL_Blog.cs` ** Business Logic Layer**
+	- Implement `Features/Blog/DA_Blog.cs` ** Data Access Layer**
+	- Implement `Features/Blog/BlogController.cs` **User Interface Layer**
+	- **Homework** : Implement methods for **PatchBlog** `BlogController, BL_Blog, DA_Blog`
