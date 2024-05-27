@@ -8,6 +8,8 @@
 		- DapperExamples
 		- EFCoreExamples
 	- MODotNetCore.ConsoleAppHttpClient
+		- JsonToObjectExample
+		- HttpClientExample
 	- MODotNetCore.RestApi
 		- Models
 			- BlogModel
@@ -43,6 +45,7 @@
 2024-05-01 => ADO.Net Custom Service  
 2024-05-07 => N-Layer Architecture (ASP.Net Core Web API + EFCore)  
 2024-05-07 => JSON to Web API (Burma Project Idea : LatHtaukBayDin)  
+2024-05-08 => HttpClient (Console App CRUD + ASP.Net Core Web API)
 
 ## Questions/Reminders
 - [ ] Q : How to handle possible Null return value? (ADO.Net/Dapper Custom Service) `ref 2024-05-01 Video`
@@ -146,7 +149,7 @@
 	- Copy All Text From `data.json` then Edit Menu > Paste Special > Paste JSON as Classes, Then Change class name `Rootobject` to `MainDto`
 33. Install `Newtonsoft.Json` package in `MODotNetCore.ConsoleAppHttpClient`
 	- To Convert **Json** > **Object**
-34. Test JSON File Reading and converting to Object
+34. Test JSON File Reading and converting to Object `JsonToObjectExample.cs`
 	- Use `File.ReadAllTextAsync("data.json")` to read from File
 	- Use `JsonConvert.DeserializeObject<MainDto>(jsonStr)` to convert objects
 34. Copy `data.json` to Project `MODotNetCore.RestApiWithNLayer`
@@ -155,3 +158,8 @@
 	- api/LatHtaukBayDin/numbers
 	- api/LatHtaukBayDin/{questionNo}/{answerNo}
 36. **Homework** Burma Project Ideas (JSON > Web API) Pick one
+37. Implement `HttpClientExample.cs` in `MODotNetCore.ConsoleAppHttpClient`
+	- Use async / await for better performance `GetAsync(), PostAsync(), PutAsync(), PatchAsync(), DeleteAsync()`
+	- Use `HttpContent` type with `StringContent` type (C# Object > Json String)
+	- Use Encoding Type `Encoding.UTF8` using `System.Text` for Non-English Text
+	- Use Media Type `Application.Json` using `System.Net.Mime.MediaTypeNames`
