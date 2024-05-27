@@ -7,6 +7,7 @@
 		- AdoDotNetExamples
 		- DapperExamples
 		- EFCoreExamples
+	- MODotNetCore.ConsoleAppHttpClient
 	- MODotNetCore.RestApi
 		- Models
 			- BlogModel
@@ -24,6 +25,8 @@
 				- BL_Blog
 				- DA_Blog
 				- BlogController `EFCore`
+			- LatHtaukBayDin
+				- LatHtaukBayDinController
 	- MODotNetCore.shared
 		- DapperService
 		- AdoDotNetService
