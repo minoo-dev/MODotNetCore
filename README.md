@@ -39,6 +39,7 @@
 2024-05-01 => Dapper Custom Service  
 2024-05-01 => ADO.Net Custom Service  
 2024-05-07 => N-Layer Architecture (ASP.Net Core Web API + EFCore)  
+2024-05-07 => JSON to Web API (Burma Project Idea : LatHtaukBayDin)  
 
 ## Questions/Reminders
 - [ ] Q : How to handle possible Null return value? (ADO.Net/Dapper Custom Service) `ref 2024-05-01 Video`
@@ -136,3 +137,18 @@
 	- Implement `Features/Blog/DA_Blog.cs` ** Data Access Layer**
 	- Implement `Features/Blog/BlogController.cs` **User Interface Layer**
 	- **Homework** : Implement methods for **PatchBlog** `BlogController, BL_Blog, DA_Blog`
+32. Add Console App Project `MODotNetCore.ConsoleAppHttpClient`
+	- Download `MinTheinKha.LatHtaukBayDin.json` from [Min Thein Kha - Lat Htauk Bay Din - Repo](https://github.com/sannlynnhtun-coding/MinTheinKha-LatHtaukBayDin) and copy to project and rename `data.json`
+	- Change File Properties (F4 or Right Click > Properties) **Copy to Output Directory** to **Copy if newer**
+	- Copy All Text From `data.json` then Edit Menu > Paste Special > Paste JSON as Classes, Then Change class name `Rootobject` to `MainDto`
+33. Install `Newtonsoft.Json` package in `MODotNetCore.ConsoleAppHttpClient`
+	- To Convert **Json** > **Object**
+34. Test JSON File Reading and converting to Object
+	- Use `File.ReadAllTextAsync("data.json")` to read from File
+	- Use `JsonConvert.DeserializeObject<MainDto>(jsonStr)` to convert objects
+34. Copy `data.json` to Project `MODotNetCore.RestApiWithNLayer`
+35. Implement `Features/LatHtaukBayDin/LatHtaukBayDinController.cs` **3 End points**
+	- api/LatHtaukBayDin/questions
+	- api/LatHtaukBayDin/numbers
+	- api/LatHtaukBayDin/{questionNo}/{answerNo}
+36. **Homework** Burma Project Ideas (JSON > Web API) Pick one
